@@ -111,10 +111,10 @@ def lab3Question5(temperature, scale_used):
     else: 
         return "Invalid"
 
-print(lab3Question5(25, "C"))
-print(lab3Question5(19, "C"))
-print(lab3Question5(-19, "C"))
-print(lab3Question5("WHAT", "C"))
-print(lab3Question5(30000,'C'))
+#print(lab3Question5(25, "C"))
+#print(lab3Question5(19, "C"))
+#print(lab3Question5(-19, "C"))
+#print(lab3Question5("WHAT", "C"))
+#print(lab3Question5(30000,'C'))
       
 
