@@ -9,9 +9,12 @@ def lab3Question1(number, cutoff):
     if my_number < my_cutoff:
         print(my_number, "is less than", my_cutoff)
         return True
-    else:
+    elif my_number > my_cutoff:
         print(my_number, "is not less than", my_cutoff)
         return False
+    else my number == 0:
+        return []
+
     
     
 #print(lab3Question1(3,10))
