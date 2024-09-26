@@ -21,13 +21,15 @@ def lab3Question2(decimal_number):
     # Return "invalid" if the input is not a float
     my_dec_number = decimal_number
     if my_dec_number == 0:
-        return zero
+        return "zero"
     elif my_dec_number < 0:
-        return negative
+        return "negative"
     elif my_dec_number > 0:
-        return positive
+        return "positive"
     elif my_dec_number != float:
-        return invalid
+        return "invalid"
+    
+print(lab3Question2(0.22))
 
 
 
