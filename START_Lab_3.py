@@ -20,9 +20,12 @@ def lab3Question2(decimal_number):
     # Return "zero" if the number is 0, "positive" if the number is positive, and "negative" if the number is negative
     # Return "invalid" if the input is not a float
     my_dec_number = decimal_number
-    if not isinstance(my_dec_number, float):
+    try:
+        my_dec_number != float
+    except:
         return "invalid"
-    elif my_dec_number == 0:
+    
+    if my_dec_number == 0:
         return "zero"
     elif my_dec_number < 0:
         return "negative"
@@ -30,7 +33,9 @@ def lab3Question2(decimal_number):
         return "positive"
     
     
-#print(lab3Question2(1))
+#print(lab3Question2(0))
+#print(lab3Question2(-10))
+#print(lab3Question2(2.5))
 
 
 
@@ -98,18 +103,18 @@ def lab3Question5(temperature, scale_used):
     if scale_used == "F":
         temperature = (temperature - 32) * 5 / 9 
     if temperature >= 100:
-        return "gas"
+        return "Gas"
     elif temperature <= 0:
-        return "solid"
+        return "Solid"
     elif temperature > 0 and temperature < 100:
-        return "liquid"
+        return "Liquid"
     else: 
         return "Invalid"
 
-#print(lab3Question5(72, "F"))
-#print(lab3Question5(19, "C"))
-#print(lab3Question5(-19, "C"))
-#print(lab3Question5("WHAT", "C"))
-#print(lab3Question5(30000,'C'))
+print(lab3Question5(25, "C"))
+print(lab3Question5(19, "C"))
+print(lab3Question5(-19, "C"))
+print(lab3Question5("WHAT", "C"))
+print(lab3Question5(30000,'C'))
       
 
