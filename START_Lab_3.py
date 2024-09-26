@@ -20,7 +20,7 @@ def lab3Question2(decimal_number):
     # Return "zero" if the number is 0, "positive" if the number is positive, and "negative" if the number is negative
     # Return "invalid" if the input is not a float
     my_dec_number = decimal_number
-    if type(my_dec_number) != float:
+    if not isinstance(my_dec_number, float):
         return "invalid"
     elif my_dec_number == 0:
         return "zero"
@@ -47,26 +47,40 @@ def lab3Question3(year):
     elif my_year >= 2101:
         return "invalid"
     
-    if 2001 >= my_year <=2100:
+    if my_year >= 2001 and my_year <= 2100:
         return "21st century"
-    elif 1901>= my_year <=2000:
+    elif my_year >= 1901 and my_year <= 2000:
         return "20th century"
-    elif 1801>= my_year <=1900:
+    elif my_year >= 1801 and my_year <= 1900:
         return "19th century"
-    elif my_year <= 1800:
+    elif my_year < 1800:
         return "ancient"
 
-print(lab3Question3(2001))
-print(lab3Question3(1992))
-print(lab3Question3(1834))
-print(lab3Question3(1750))
-print(lab3Question3(3000))
+#print(lab3Question3(2001))
+#print(lab3Question3(1992))
+#print(lab3Question3(1834))
+#print(lab3Question3(1750))
+#print(lab3Question3(3000))
+#print(lab3Question3('hi'))
 
 def lab3Question4(number_1, number_2, number_3):
     # Take in three numbers as arguments
     # Return the largest of the three numbers
     # Return None if the inputs are not 3 numbers
-    pass
+    my_one = number_1
+    my_two = number_2
+    my_three = number_3
+    if not isinstance(my_one,int):
+        return None
+    elif not isinstance(my_two, int):
+        return None
+    elif not isinstance(my_three, int):
+        return None
+    return max(my_one,my_two,my_three)
+
+
+#print(lab3Question4(12,34,55))
+#print(lab3Question4('hi',23,11))
 
 def lab3Question5(temperature, scale_used):
     # Take in a temperature and the scale that the temperature is in - either "C" for Celsius or "F" for Fahrenheit (capitalized)
@@ -74,5 +88,28 @@ def lab3Question5(temperature, scale_used):
     # Return "Solid" if water is in solid state at that temperature
     # Return "Gas" if water is in gas state at that temperature
     # Return "Invalid" if the temperature or scale are invalid
-    pass
+
+    try:
+        scale_used != "C" or "F"
+        temperature == int(temperature)
+    except ValueError:
+        return "Invalid"
+    
+    if scale_used == "F":
+        temperature = (temperature - 32) * 5 / 9 
+    if temperature >= 100:
+        return "gas"
+    elif temperature <= 0:
+        return "solid"
+    elif temperature > 0 and temperature < 100:
+        return "liquid"
+    else: 
+        return "Invalid"
+
+#print(lab3Question5(72, "F"))
+#print(lab3Question5(19, "C"))
+#print(lab3Question5(-19, "C"))
+#print(lab3Question5("WHAT", "C"))
+#print(lab3Question5(30000,'C'))
+      
 
